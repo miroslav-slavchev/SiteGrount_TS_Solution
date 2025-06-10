@@ -1,4 +1,3 @@
-import { SearchContext, By, PageObject, Locate, UiElement, PageObjectList } from '@core';
 import { SideNavigation } from './sideNavigation';
 
 export class EmailNavigationList {
@@ -8,31 +7,31 @@ export class EmailNavigationList {
     this.navigation = navigation;
   }
 
-  async accountsAsync(): Promise<void> {
+  async clickAccountsAsync(): Promise<void> {
     await this.navigation.navigateAsync('Email', 'Accounts');
   }
 
-  async forwardersAsync(): Promise<void> {
+  async clickForwardersAsync(): Promise<void> {
     await this.navigation.navigateAsync('Email', 'Forwarders');
   }
 
-  async autorespondersAsync(): Promise<void> {
+  async clickAutorespondersAsync(): Promise<void> {
     await this.navigation.navigateAsync('Email', 'Autoresponders');
   }
 
-  async filtersAsync(): Promise<void> {
+  async clickFiltersAsync(): Promise<void> {
     await this.navigation.navigateAsync('Email', 'Filters');
   }
 
-  async authenticationAsync(): Promise<void> {
+  async clickAuthenticationAsync(): Promise<void> {
     await this.navigation.navigateAsync('Email', 'Authentication');
   }
 
-  async spamProtectionAsync(): Promise<void> {
+  async clickSpamProtectionAsync(): Promise<void> {
     await this.navigation.navigateAsync('Email', 'Spam Protection');
   }
 
-  async emailMigratorAsync(): Promise<void> {
+  async clickEmailMigratorAsync(): Promise<void> {
     await this.navigation.navigateAsync('Email', 'Email Migrator');
   }
 }

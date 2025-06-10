@@ -12,19 +12,19 @@ export class FormPasswordField extends PageObject {
     return this.uiElementOfType<TextInput>(TextInput, Locate.by('css=input[data-e2e=form-password-password]'));
   }
 
-  get showOrHide(): ShowHideButton {
+  get showOrHideButton(): ShowHideButton {
     return this.uiElementOfType<ShowHideButton>(ShowHideButton);
   }
 
-  get generate(): Button {
+  get generateButton(): Button {
     return this.uiElementOfType<Button>(Button, Locate.by('css=button[data-e2e=password-generate]'));
   }
 
-  get copy(): Button {
+  get copyButton(): Button {
     return this.uiElementOfType<Button>(Button, Locate.bySelector('css=button').withOptions({ hasText: 'Copy' }).build());
   }
 
-  get reGenerate(): Button {
+  get reGenerateButton(): Button {
     return this.uiElementOfType<Button>(Button, Locate.by('css=span[data-icon=refresh]'));
   }
 }

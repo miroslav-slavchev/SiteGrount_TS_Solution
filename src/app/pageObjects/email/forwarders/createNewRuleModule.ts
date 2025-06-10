@@ -9,7 +9,7 @@ export class CreateNewRuleModule extends Module {
     super(searchContext, by);
   }
 
-  get create(): Button {
+  get createButton(): Button {
     return this.uiElementOfType<Button>(Button, Locate.by('css=button.sg-button--primary'));
   }
 

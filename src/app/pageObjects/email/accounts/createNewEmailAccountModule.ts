@@ -27,7 +27,7 @@ export class CreateNewEmailAccountModule extends Module {
     return this.uiElementOfType<LoadSpinner>(LoadSpinner);
   }
 
-  async createAsync(): Promise<void> {
+  async clickCreateButtonAsync(): Promise<void> {
     await this.create.click();
     await this.loadSpinner.locator.waitFor({
       state: 'hidden',

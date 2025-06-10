@@ -13,10 +13,10 @@ test.describe('Email Tests', () => {
     const accountAddOn = await app.emailPage.accounts.createNewEmailAccount.accountName.addOn.textContent();
     await app.emailPage.accounts.createNewEmailAccount.accountName.input.fill(accountName);
 
-    await app.emailPage.accounts.createNewEmailAccount.password.generate.click();
+    await app.emailPage.accounts.createNewEmailAccount.password.generateButton.click();
     const filledPassword = await app.emailPage.accounts.createNewEmailAccount.password.input.inputValue();
 
-    await app.emailPage.accounts.createNewEmailAccount.createAsync();
+    await app.emailPage.accounts.createNewEmailAccount.clickCreateButtonAsync();
 
     // Assertions
     expect(accountAddOn).toBe(`@${domain}`);
@@ -46,10 +46,10 @@ test.describe('Email Tests', () => {
     ];
 
     //Act
-    await app.sideNavigation.email.forwardersAsync();
+    await app.sideNavigation.email.clickForwardersAsync();
     const options = await app.emailPage.forwarders.selectDomain.dropDown.optionsTextContentAsync();
     await app.emailPage.forwarders.selectDomain.dropDown.selectOptionAsync(domain);
-    await app.emailPage.forwarders.createNewRule.create.click();
+    await app.emailPage.forwarders.createNewRule.createButton.click();
     const validationError = await app.emailPage.forwarders.createNewRule.forwardAllMessagesSentTo.validationError.presentAsync();
 
     // Assertions
