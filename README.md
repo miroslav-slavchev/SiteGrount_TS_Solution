@@ -17,7 +17,7 @@
    - Navigate to solution folder
    - run command `npx playwright test` 
  - Visual Studio Code:
-   - Open Testing tab
-   - In the Test Explorer - right-click on the Email tests and click Run.
+   - Open **Testing** tab
+   - In the Test Explorer - right-click on the Email tests and click **Run Tests**.
    ![image](https://github.com/user-attachments/assets/41fe1a6b-764d-490d-9885-70b284f70aab)
    
