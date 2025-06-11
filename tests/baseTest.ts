@@ -1,6 +1,7 @@
 import { test as base, expect } from '@playwright/test';
 import { Application } from '../src/app/application';
 import { PageSession } from '@core';
+import { Config } from 'appconfig';
 
 type TestFixtures = {
   app: Application;
@@ -16,7 +17,9 @@ export const test = base.extend<TestFixtures>({
     const session = new PageSession(page);
     const app = new Application(session);
 
-    const fullUrl = `https://sqqadevs.com/?demoToken=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmaXJzdF9uYW1lIjoiUSIsImxhc3RfbmFtZSI6IkEiLCJlbWFpbCI6InEuYUBzaXRlZ3JvdW5kLmNvbSIsImRvbWFpbiI6IiIsImxhbmciOiJlbiIsImV4cCI6MTk3MDEyNTA3NzJ9.MXA6ZIdl85XojUPStcz3JqyEct0bpKeOk_EEfOh7z7o`;
+    const url = Config.app.url;
+    const token = Config.user.token;
+    const fullUrl = `${url}?demoToken=${token}`;
     await page.goto(fullUrl);
 
     await use(app);
